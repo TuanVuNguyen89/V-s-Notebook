@@ -1,0 +1,11 @@
+// dnc
+void solve(int L, int R, int from, int to) {
+    if (L > R) return;
+    int mid = L + R >> 1;
+    best[mid] = from;
+    for (int i = from + 1; i <= to; ++i)
+        if (eval(mid + 1, best[mid]) > eval(mid + 1, i))
+            best[mid] = i;
+    solve(L, mid - 1, from, best[mid]);
+    solve(mid + 1, R, best[mid], to);
+}
