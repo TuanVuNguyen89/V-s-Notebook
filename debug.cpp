@@ -16,6 +16,11 @@ int main()
         ofstream inp((NAME + ".inp").c_str());
         // Code phần sinh test ở đây
         inp.close();
+
+        ifstream out1(NAME + ".out"), out2(NAME + ".ans");
+		// Viết checker. Output của code chuẩn đọc ở out1, của code trâu đọc ở out2.
+		out1.close(); out2.close();
+
         system((NAME + ".exe").c_str());
         system((NAME + "_debug.exe").c_str());
         if (system(("fc " + NAME + ".out " + NAME + ".ans").c_str()) != 0)
@@ -27,4 +32,3 @@ int main()
     }
     return 0;
 }
-
