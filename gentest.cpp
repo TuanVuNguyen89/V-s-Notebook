@@ -31,7 +31,7 @@ long long Rand(long long l, long long r) {return l + rng() % (r - l + 1);}
 
 void sinh(int test) {
     ofstream os;
-    ofstream inp((to_string(x) + ".inp").c_str());
+    ofstream inp((to_string(test) + ".inp").c_str());
     // viết code sinh test ở đây
 }
 
