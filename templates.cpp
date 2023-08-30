@@ -1,7 +1,4 @@
-/**
-*    Author :  Nguyen Tuan Vu
-*    Created : 
-**/
+/** Author :  Nguyen Tuan Vu **/
 
 #pragma GCC optimize("O2")
 #pragma GCC target("avx,avx2,fma")
@@ -27,7 +24,10 @@ template <class X, class Y> bool maximize(X &a, Y b) {
 using namespace std;
 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-int Rand(int l, int r) {return l + rng() % (r - l + 1);}
+long long Rand(long long l, long long r) {
+    uniform_int_distribution <long long> rnd(l, r);
+    return rnd(rng);
+}
 
 void file(){
     #define TASK "TASK"
@@ -37,11 +37,20 @@ void file(){
     }
 }
 
-int main()
+void solve() {
+		
+}
+
+signed main()
 {
     ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
     file();
-   
+   	
+   	int ntest = 1;
+   	cin >> ntest;
+   	while (ntest--) {
+   		solve();
+   	}
     cerr << "Time elapsed: " << TIME << " s.\n";
     return 0;
 }
